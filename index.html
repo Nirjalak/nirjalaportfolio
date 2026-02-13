@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirjala Khandale - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            font-size: 1.1em;
+            margin-top: 15px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2d3748;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            color: #667eea;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        /* Summary Section */
+        .summary {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .education-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .education-date {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .education-details {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .cgpa {
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Project Section */
+        .project {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #764ba2;
+        }
+
+        .project h3 {
+            color: #2d3748;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .project ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .project ul li {
+            margin-bottom: 10px;
+            color: #4a5568;
+        }
+
+        /* Achievements Section */
+        .achievements-list {
+            list-style: none;
+        }
+
+        .achievements-list li {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #48bb78;
+            transition: transform 0.3s;
+        }
+
+        .achievements-list li:hover {
+            transform: translateX(10px);
+        }
+
+        .achievements-list li:before {
+            content: "✓";
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        /* Languages Section */
+        .languages {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            background: #2d3748;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .education-date {
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+        }
+
+        /* Scroll Animation */
+        section {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+        section:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Nirjala Khandale</h1>
+            <div class="contact-info">
+                <span>📍 Nagpur, Maharashtra</span>
+                <span>|</span>
+                <a href="mailto:nirjalakhandale01@gmail.com">✉️ nirjalakhandale01@gmail.com</a>
+                <span>|</span>
+                <a href="tel:+918329331478">📱 +91 8329331478</a>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#languages">Languages</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Summary Section -->
+            <section id="summary">
+                <h2>Summary</h2>
+                <div class="summary">
+                    Final-year Mechanical Engineering student with a solid foundation in core mechanical concepts and a growing interest in IT. Familiar with SQL and HTML, with a balanced understanding of both mechanical systems and software technologies. Eager to apply technical knowledge and problem-solving skills in a dynamic engineering or IT environment.
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="education-title">Bachelor of Engineering (Mechanical Engineering)</div>
+                        <div class="education-date">2022 - present</div>
+                    </div>
+                    <div class="education-details">Yeshwantrao Chavan College of Engineering, Nagpur</div>
+                    <div class="cgpa">CGPA: 8.05</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="education-title">Higher Secondary School Certification</div>
+                        <div class="education-date">2021 - 22</div>
+                    </div>
+                    <div class="education-details">St. Paul Junior College, Nagpur (Maharashtra State Board)</div>
+                    <div class="cgpa">Percentage: 73.00%</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="education-title">Secondary School Certification</div>
+                        <div class="education-date">2019 - 20</div>
+                    </div>
+                    <div class="education-details">Kendriya Vidyalaya, Ajni, Nagpur (CBSE Board)</div>
+                    <div class="cgpa">Percentage: 66.8%</div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <h2>Technical Competencies</h2>
+                <div class="skills-container">
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">HTML</div>
+                    <div class="skill-item">SOLIDWORKS</div>
+                    <div class="skill-item">AUTOCAD</div>
+                    <div class="skill-item">POWER BI</div>
+                </div>
+            </section>
+
+            <!-- Project Section -->
+            <section id="project">
+                <h2>Project</h2>
+                <div class="project">
+                    <h3>Design and Experimental Investigation of Polyvinyl Alcohol (PVA)/Polyvinyl Pyrrolidone (PVP) for Proton Exchange Membrane Fuel Cells</h3>
+                    <ul>
+                        <li>Fabricated PVA–PVP hybrid membranes to improve proton conductivity, mechanical strength, and thermal stability.</li>
+                        <li>Conducted literature review and gap analysis to identify material limitations.</li>
+                        <li>Performed membrane casting, drying, and structural testing for performance evaluation.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section id="achievements">
+                <h2>Achievements</h2>
+                <ul class="achievements-list">
+                    <li>Certification in Introduction to SQL</li>
+                    <li>Actively participated in and conducted mechanical engineering workshops, and seminars to enhance technical knowledge and hands-on skills.</li>
+                </ul>
+            </section>
+
+            <!-- Languages Section -->
+            <section id="languages">
+                <h2>Languages</h2>
+                <div class="languages">
+                    <div class="language-item">English</div>
+                    <div class="language-item">Hindi</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Nirjala Khandale. All rights reserved.</p>
+            <p>Built with passion and dedication | <a href="mailto:nirjalakhandale01@gmail.com">Get in touch</a></p>
+        </footer>
+    </div>
+</body>
+</html>
